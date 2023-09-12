@@ -12,11 +12,11 @@ function HomeLayout({children}) {
     }
 
     return (
-        <div>
-            <div className="drawer h-[90vh] z-50">
+        <div>  
+            <div className="drawer z-50">
                 <input id="my-drawer" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content m-2">
-                    <label htmlFor="my-drawer" className="drawer-button"><FiMenu size={40}/></label>
+                    <label htmlFor="my-drawer" className="drawer-button btn bg-transparent border-none hover:bg-transparent cursor-pointer"><FiMenu size={40}/></label>
                 </div> 
                 <div className="drawer-side">
                     <label htmlFor="my-drawer" className="drawer-overlay"></label>
@@ -29,7 +29,7 @@ function HomeLayout({children}) {
                     </ul>
                 </div>
             </div>
-            {children}  
+            {children}
             <Footer />
         </div>
     )
