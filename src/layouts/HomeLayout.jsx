@@ -34,7 +34,7 @@ function HomeLayout({children}) {
                         <li className='absolute top-4 right-4 w-fit z-50'><button onClick={hideDrawer}><AiFillCloseCircle size={20}/></button></li>
                         <li><Link to="/">Home</Link></li>
                         {isLoggedIn && role == 'ADMIN' && ( <li><Link to="/admin/dasboard">Admin Dasboard</Link></li>)}
-                        <li><Link to="/about">About us</Link></li>
+                        <li><Link to="/aboutus">About us</Link></li>
                         <li><Link to="/contact">Contact Us</Link></li>
                         <li><Link to="/courses">All Courses</Link></li>
                         {isLoggedIn ? ( 
