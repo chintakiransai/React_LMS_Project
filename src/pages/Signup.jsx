@@ -58,7 +58,7 @@ function Signup() {
         console.log(response);
         if(response?.payload?.data?.success)
         {
-            navigate('/')
+            navigate('/signin')
         }
     }
 
@@ -66,7 +66,7 @@ function Signup() {
         <HomeLayout>
             <div className='h-screen w-full flex justify-center items-center -my-8'>
                 <form onSubmit={formSubmit} noValidate className='w-80 flex flex-col space-y-1 border border-white px-10 py-6'>
-                    <h1 className='text-2xl text-center font-semibold'>Registration Page</h1>
+                    <h1 className='text-2xl text-center font-bold'>Registration Page</h1>
                     <div>
                         <label htmlFor="avatar">
                             {previewImage ? 
@@ -120,7 +120,7 @@ function Signup() {
                     </div>
                     <button className='text-lg text-white font-semibold bg-blue-500 rounded-sm py-1 px-2ransition-all ease-in-out duration-300 cursor-pointer'>Create account</button>
                     <p className='text-center mt-2'>
-                        Already have an account ?<Link to="/login" className='text-blue-500'>Login</Link>
+                        Already have an account ?<Link to="/signin" className='text-blue-500'>Login</Link>
                     </p>
                 </form>
             </div>
