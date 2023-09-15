@@ -9,6 +9,7 @@ import { userlogin } from "../redux/slices/authSlice"
 
 function Signin() {
     
+    const dispatch = useDispatch()
     const navigate = useNavigate()
 
     const [signinDetails,setSigninDetails]=useState({email:'',password:''})
@@ -21,14 +22,23 @@ function userInputHandler(e) {
 async function formSubmit(e)
 {
     e.preventDefault()
-    
+    if(!signinDetails.email || !signinDetails.password)
+    {
+        toast.error("Please fill the all details")
+        return
+    }
+    const response = await dispatch(userlogin(signinDetails))
+    console.log(response);
+    if(response?.payload?.data?.success)
+    {
+        navigate('/')
+    }   
 }
-
 
     return (
         <HomeLayout>
             <div className='h-screen w-full flex justify-center items-center -my-8'>
-                <form onSubmit={formSubmit} noValidate className='w-80 flex flex-col space-y-1 border border-white px-10 py-6'>
+                <form onSubmit={formSubmit} noValidate className='w-80 flex flex-col space-y-1 border border-white px-10 py-10'>
                     <h1 className='text-2xl text-center font-bold'>Login Page</h1>
                     <div className='flex flex-col gap-1'>
                         <label htmlFor="email">Email</label>
@@ -56,7 +66,7 @@ async function formSubmit(e)
                     </div>
                     <button className='text-lg text-white font-semibold bg-blue-500 rounded-sm py-1 px-2ransition-all ease-in-out duration-300 cursor-pointer'>Create account</button>
                     <p className='text-center mt-2'>
-                        Donot have a Account?<Link to="/signup" className='text-blue-500'>Signup</Link>
+                        Donot have an Account?<Link to="/signup" className='text-blue-500'>Signup</Link>
                     </p>
                 </form>
             </div>
