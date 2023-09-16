@@ -40,7 +40,7 @@ function Signup() {
             return
         }
         if(!isEmail(signupDetails.email)) {
-            toast.error("Provided email is not validated")
+            toast.error("Please Provided validated email")
             return
         }
         if(!isPassword(signupDetails.password)) {
@@ -59,6 +59,7 @@ function Signup() {
         if(response?.payload?.data?.success)
         {
             navigate('/signin')
+            setSignupDetails({name:'',email:'',password:'',avatar:''})
         }
     }
 
@@ -118,9 +119,9 @@ function Signup() {
                             id="password 
                             required" />
                     </div>
-                    <button className='text-lg text-white font-semibold bg-blue-500 rounded-sm py-1 px-2ransition-all ease-in-out duration-300 cursor-pointer'>Create account</button>
+                    <button className='text-lg text-white font-semibold bg-blue-500 rounded-sm py-1 px-2 hover:bg-blue-600 transition-all ease-in-out duration-300 cursor-pointer'>Create account</button>
                     <p className='text-center mt-2'>
-                        Already have an account ?<Link to="/signin" className='text-blue-500'>Login</Link>
+                        Already have an account ?<Link to="/signin" className='text-blue-500 hover:text-blue-600'>Login</Link>
                     </p>
                 </form>
             </div>

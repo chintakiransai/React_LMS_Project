@@ -28,10 +28,10 @@ async function formSubmit(e)
         return
     }
     const response = await dispatch(userlogin(signinDetails))
-    console.log(response);
     if(response?.payload?.data?.success)
     {
         navigate('/')
+        setSigninDetails({email:'',password:''})
     }   
 }
 
@@ -39,7 +39,7 @@ async function formSubmit(e)
         <HomeLayout>
             <div className='h-screen w-full flex justify-center items-center -my-8'>
                 <form onSubmit={formSubmit} noValidate className='w-80 flex flex-col space-y-1 border border-white px-10 py-10'>
-                    <h1 className='text-2xl text-center font-bold'>Login Page</h1>
+                    <h1 className='text-4xl text-center font-semibold mb-4'>Login Page</h1>
                     <div className='flex flex-col gap-1'>
                         <label htmlFor="email">Email</label>
                         <input 
@@ -64,9 +64,9 @@ async function formSubmit(e)
                             id="password 
                             required" />
                     </div>
-                    <button className='text-lg text-white font-semibold bg-blue-500 rounded-sm py-1 px-2ransition-all ease-in-out duration-300 cursor-pointer'>Create account</button>
+                    <button className='text-lg text-white font-semibold bg-blue-500 rounded-sm py-1 px-2 hover:bg-blue-600 transition-all ease-in-out duration-300 cursor-pointer'>Create account</button>
                     <p className='text-center mt-2'>
-                        Donot have an Account?<Link to="/signup" className='text-blue-500'>Signup</Link>
+                        Donot have an Account?<Link to="/signup" className='text-blue-500 hover:text-blue-600'>Signup</Link>
                     </p>
                 </form>
             </div>
