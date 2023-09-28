@@ -6,6 +6,7 @@ import {Route,Routes} from 'react-router-dom'
 
 import Aboutus from './pages/Aboutus'
 import Contact from './pages/Contact'
+import Denied from './pages/Denied'
 import Home from './pages/Home'
 import NotFound from './pages/NotFound'
 import Signin from './pages/signin'
@@ -23,6 +24,7 @@ function App() {
       <Route path="/aboutus" element={<Aboutus/>}/>
       <Route path="/signup" element={<Signup/>}/>
       <Route path="/signin" element={<Signin/>}/>
+      <Route path="/denied" element={<Denied/>}/>
       <Route path="*" element={<NotFound/>}/>      
     </Routes>
     )

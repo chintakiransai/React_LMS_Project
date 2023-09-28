@@ -29,16 +29,18 @@ function Contact() {
             return
         }
         try {
-            const response = axiosInstance.post('/contact',contactInput)
+            const response = axiosInstance.post('contact/contactus',contactInput)
             toast.promise(response,{
                 loading:"Submitting your query",
                 success : "Form submitted successfully",
                 error : "Failed to submit the form"
             })
            const responseData = await response
+           console.log(responseData);
             if(responseData?.data)
             {
                 setContactInput({name:'',email:'',message:''})
+                setContactInput({...contactInput})
             }
         } catch (error) {
                 toast.error("operation failed....")
