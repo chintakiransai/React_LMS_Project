@@ -37,11 +37,12 @@ function HomeLayout({children}) {
                     <label htmlFor="my-drawer" className="drawer-overlay"></label>
                     <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
                         <li className='absolute top-4 right-4 w-fit z-50'><button onClick={hideDrawer}><AiFillCloseCircle size={20} /></button></li>
-                        <li><Link to="/">Home</Link></li>
-                        {isLoggedIn && role == 'ADMIN' && ( <li><Link to="/admin/dasboard">Admin Dasboard</Link></li>)}
-                        <li><Link to="/courses">All Courses</Link></li>
-                        <li><Link to="/contact">Contact Us</Link></li>
-                        <li><Link to="/aboutus">About us</Link></li>
+                        <li className='text-lg'><Link to="/">Home</Link></li>
+                        {isLoggedIn && role == 'ADMIN' && ( <li className='text-lg'><Link to="/admin/dasboard">Admin Dasboard</Link></li>)}
+                        {isLoggedIn && role == 'ADMIN' && ( <li className='text-lg'><Link to="/course/create">Course Create</Link></li>)}
+                        <li className='text-lg'><Link to="/courses">All Courses</Link></li>
+                        <li className='text-lg'><Link to="/contact">Contact Us</Link></li>
+                        <li className='text-lg'><Link to="/aboutus">About us</Link></li>
                         
                     </ul>
                 </div>
@@ -57,8 +58,8 @@ function HomeLayout({children}) {
                         ) 
                         : ( <div className='absolute bottom-4'>
                                 <div className=' space-x-4 hover:bg-transparent  flex justify-end items-end mr-8'>
-                                    <Link to="/signin"><button className='bg-blue-500 text-white px-6 py-1 rounded-md  hover:bg-blue-600 transition-all ease-in-out duration-300'>Login</button></Link>
-                                    <Link to="/signup"><button className='bg-blue-500 text-white px-6 py-1 rounded-md  hover:bg-blue-600 transition-all ease-in-out duration-300'>Signup</button></Link>
+                                    <Link to="/signin"><button className='bg-blue-500 text-lg text-white px-6 py-1 rounded-md  hover:bg-blue-600 transition-all ease-in-out duration-300'>Login</button></Link>
+                                    <Link to="/signup"><button className='bg-blue-500 text-lg text-white px-6 py-1 rounded-md  hover:bg-blue-600 transition-all ease-in-out duration-300'>Signup</button></Link>
                                 </div>
                             </div>
                         )}   

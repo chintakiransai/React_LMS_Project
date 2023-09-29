@@ -1,9 +1,9 @@
 import {configureStore} from '@reduxjs/toolkit'
 
 import authReducer from './slices/authSlice'
-import courseReducer from './slices/courseSlice'
+import courseSliceReducer from './slices/courseSlice'
 
-const store = configureStore({reducer:{auth:authReducer,course:courseReducer},
+const store = configureStore({reducer:{auth:authReducer,course:courseSliceReducer},
                 middleware: (getDefaultMiddleware) => getDefaultMiddleware({serializableCheck: false}),
                 devTools:true})
 
