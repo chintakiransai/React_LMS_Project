@@ -6,6 +6,7 @@ import {Route,Routes} from 'react-router-dom'
 
 import Aboutus from './pages/Aboutus'
 import Contact from './pages/Contact'
+import CourseDescription from './pages/Course/CourseDescription'
 import CourseList from './pages/Course/CourseList'
 import Denied from './pages/Denied'
 import Home from './pages/Home'
@@ -27,6 +28,7 @@ function App() {
       <Route path="/signin" element={<Signin/>}/>
       <Route path="/denied" element={<Denied/>}/>
       <Route path="/courses" element={<CourseList/>}/>
+      <Route path="/courses/description" element={<CourseDescription/>}/>
       <Route path="*" element={<NotFound/>}/>
 
     </Routes>
