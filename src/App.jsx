@@ -1,13 +1,13 @@
 import './App.css'
 
-import { useEffect } from 'react'
-import { toast } from 'react-hot-toast'
 import {Route,Routes} from 'react-router-dom'
 
+import RequireAuth from './components/Auth/RequireAuth'
 import Aboutus from './pages/Aboutus'
 import Contact from './pages/Contact'
 import CourseDescription from './pages/Course/CourseDescription'
 import CourseList from './pages/Course/CourseList'
+import CreateCourse from './pages/Course/CretaeCourse'
 import Denied from './pages/Denied'
 import Home from './pages/Home'
 import NotFound from './pages/NotFound'
@@ -15,9 +15,6 @@ import Signin from './pages/signin'
 import Signup from './pages/Signup'
 
 function App() {
-  useEffect(()=>{
-    toast.success("hello")
-  })
 
   return (
     <Routes>
@@ -29,6 +26,9 @@ function App() {
       <Route path="/denied" element={<Denied/>}/>
       <Route path="/courses" element={<CourseList/>}/>
       <Route path="/courses/description" element={<CourseDescription/>}/>
+      <Route element={<RequireAuth allowedRoles={["ADMIN"]}/>} >
+        <Route path="/courses/create" element={<CreateCourse/>}/>
+      </Route>
       <Route path="*" element={<NotFound/>}/>
 
     </Routes>
