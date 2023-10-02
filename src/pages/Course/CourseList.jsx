@@ -15,9 +15,9 @@ async function getAllCourses() {
 }
 
 useEffect(()=> {
-   
-getAllCourses()
+    getAllCourses()
 },[])
+
     return (
         <HomeLayout>
             <main className="min-h-[90vh] mt-20 mb-8  ml-16 ">

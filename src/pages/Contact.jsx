@@ -50,7 +50,7 @@ function Contact() {
         return (
             <HomeLayout>
             <div className="min-h-[90vh]  mt-16 flex justify-center items-center">
-                <form onSubmit={formSubmit} noValidate className="w-80 flex flex-col justify-center items-center space-y-2 border border-white px-10 py-10">
+                <form onSubmit={formSubmit} noValidate className="w-80 flex flex-col justify-center items-center space-y-2 shadow-[0_0_10px_black] px-10 py-10">
                     <h1 className="text-4xl font-semibold mb-2">Contact Us</h1>
                     <div className="flex flex-col w-full">
                         <label htmlFor="name">Name</label>

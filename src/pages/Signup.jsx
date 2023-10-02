@@ -13,7 +13,7 @@ function Signup() {
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
-    const [signupDetails,setSignupDetails] = useState({name:'',email:'',password:'',avatar:''})
+    const [signupDetails,setSignupDetails] = useState({name:'',email:'',password:'',avatar:null})
     const [previewImage,setPreviewImage] = useState(null)
 
     function imageHandler(e)
@@ -55,7 +55,6 @@ function Signup() {
         formData.append("avatar",signupDetails.avatar)
 
         const response = await dispatch(createAccount(formData))
-        console.log(response);
         if(response?.payload?.data?.success)
         {
             navigate('/signin')
@@ -66,7 +65,7 @@ function Signup() {
     return (
         <HomeLayout>
             <div className='h-screen mt-16 w-full flex justify-center items-center'>
-                <form onSubmit={formSubmit} noValidate className='w-80 flex flex-col space-y-1 border border-white px-10 py-6'>
+                <form onSubmit={formSubmit} noValidate className='w-80 flex flex-col space-y-1  shadow-[0_0_10px_black] px-10 py-6'>
                     <h1 className='text-2xl text-center font-bold'>Registration Page</h1>
                     <div>
                         <label htmlFor="avatar">

@@ -10,7 +10,7 @@ function Aboutus() {
 
 return (
     <HomeLayout>
-        <div className="flex mt-20 justify-center items-center px-2 sm:px-20  gap-8">
+        <div className="h-[90vh] flex mt-20 justify-center items-center px-2 sm:px-20  gap-8">
             <section className="w-full sm:w-1/2 space-y-6">
                 <h1 className='text-5xl font-semibold text-blue-500 '>Affordable And Quality Education</h1>
                 <p className='text-xl'>

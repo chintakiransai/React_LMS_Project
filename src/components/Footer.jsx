@@ -9,16 +9,16 @@ const year = newDate.getFullYear()
                 Copyright {year} | All rights reserved
             </section>
             <section className='flex justify-center items-center gap-4 text-xl'>
-                <a href="#" className='hover:text-blue-600 transition ease-in-out duration-300'>
+                <a href="#" className='text-blue-500 hover:text-blue-700 transition ease-in-out duration-300'>
                     <BsFacebook />
                 </a>
-                <a href="#" className='hover:text-blue-600 transition ease-in-out duration-300'>
+                <a href="#" className='text-blue-500 hover:text-blue-700 transition ease-in-out duration-300'>
                     <BsInstagram />
                 </a>
-                <a href="#" className='hover:text-blue-600 transition ease-in-out duration-300'>
+                <a href="#" className='text-blue-500 hover:text-blue-700 transition ease-in-out duration-300'>
                     <BsLinkedin />
                 </a>
-                <a href="#" className='hover:text-blue-600 transition ease-in-out duration-300'>
+                <a href="#" className='text-blue-500 hover:text-blue-700 transition ease-in-out duration-300'>
                     <BsTwitter />
                 </a>
                 

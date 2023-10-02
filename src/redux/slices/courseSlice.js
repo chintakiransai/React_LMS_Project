@@ -20,6 +20,23 @@ export const allCourses = createAsyncThunk('/course/allCourses',async ()=> {
     }
 })
 
+
+export const createCourses = createAsyncThunk('/course/create',async (data)=> {
+    try 
+    {
+    const response = axiosInstance.post('/course',data)
+    toast.promise(response, {
+        loading:"Please wait creating courses",
+        success:"successfully created the course",
+        failed:"failed to create the courses"
+    })
+    return await response
+    } catch (error) {
+            toast.error(error?.response?.data?.message)
+    }
+})
+
+
 const courseSlice = createSlice({name:"course",initialState,reducers:{},
                                     extraReducers: (builder) => {
                                         builder.addCase(allCourses.fulfilled,(state,action)=> {

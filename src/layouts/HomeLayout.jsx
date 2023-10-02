@@ -9,6 +9,7 @@ import { userlogout } from '../redux/slices/authSlice'
 function HomeLayout({children}) {
     const dispatch = useDispatch()
     const navigate = useNavigate()
+    const currentRoute = location.pathname;
     const isLoggedIn = useSelector((state)=>state?.auth?.isLoggedIn)
     const role = useSelector((state)=>state?.auth?.role)
 
@@ -36,13 +37,13 @@ function HomeLayout({children}) {
                 <div className="drawer-side">
                     <label htmlFor="my-drawer" className="drawer-overlay"></label>
                     <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
-                        <li className='absolute top-4 right-4 w-fit z-50'><button onClick={hideDrawer}><AiFillCloseCircle size={20} /></button></li>
-                        <li className='text-lg'><Link to="/">Home</Link></li>
-                        {isLoggedIn && role == 'ADMIN' && ( <li className='text-lg'><Link to="/admin/dasboard">Admin Dasboard</Link></li>)}
-                        {isLoggedIn && role == 'ADMIN' && ( <li className='text-lg'><Link to="/course/create">Course Create</Link></li>)}
-                        <li className='text-lg'><Link to="/courses">All Courses</Link></li>
-                        <li className='text-lg'><Link to="/contact">Contact Us</Link></li>
-                        <li className='text-lg'><Link to="/aboutus">About us</Link></li>
+                        <li className='absolute top-5 right-4 w-fit z-50 text-white'><button onClick={hideDrawer}><AiFillCloseCircle size={20} /></button></li>
+                        <li className={currentRoute === '/' ? 'bg-blue-500 text-white rounded-lg text-lg' : 'text-lg'}><Link to="/">Home</Link></li>
+                        {isLoggedIn && role == 'ADMIN' && ( <li className={currentRoute === '/admin/dasboard' ? 'bg-blue-500 text-white rounded-lg text-lg' : 'text-lg'}><Link to="/admin/dasboard">Admin Dasboard</Link></li>)}
+                        {isLoggedIn && role == 'ADMIN' && ( <li className={currentRoute === '/courses/create' ? 'bg-blue-500 text-white rounded-lg text-lg' : 'text-lg'}><Link to="/courses/create">Course Create</Link></li>)}
+                        <li className={currentRoute === '/courses' ? 'bg-blue-500 text-white rounded-lg text-lg' : 'text-lg'}><Link to="/courses">All Courses</Link></li>
+                        <li className={currentRoute === '/contact' ? 'bg-blue-500 text-white rounded-lg text-lg' : 'text-lg'}><Link to="/contact">Contact Us</Link></li>
+                        <li className={currentRoute === '/aboutus' ? 'bg-blue-500 text-white rounded-lg text-lg' : 'text-lg'}><Link to="/aboutus">About us</Link></li>
                         
                     </ul>
                 </div>
