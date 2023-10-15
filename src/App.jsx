@@ -13,6 +13,7 @@ import Home from './pages/Home'
 import NotFound from './pages/NotFound'
 import Signin from './pages/signin'
 import Signup from './pages/Signup'
+import UserProfile from './pages/User/UserProfile'
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
       <Route path="/signup" element={<Signup/>}/>
       <Route path="/signin" element={<Signin/>}/>
       <Route path="/denied" element={<Denied/>}/>
+      <Route path="/profile" element={<UserProfile/>}/>
       <Route path="/courses" element={<CourseList/>}/>
       <Route path="/courses/description" element={<CourseDescription/>}/>
       <Route element={<RequireAuth allowedRoles={["ADMIN"]}/>} >

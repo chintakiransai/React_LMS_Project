@@ -8,18 +8,18 @@ function CourseDescription() {
     return (
         <HomeLayout>
             <main className="min-h-[90vh] flex flex-col justify-center items-center mt-20 mb-4">
-                <div className="max-w-[80vw] min-h-[50vh] card card-side gap-x-[6vw] bg-transparent">
-                    <figure className="w-[50vw] max-w-md flex flex-col gap-4"><img src={state.thumbnail} alt="Movie"/><button className="btn btn-primary">Subscribe</button></figure>
-                    
-                    <div className="card-body w-[50vw] relative pt-0">
-                        <h2 className="card-title text-4xl">{state.title}</h2>
+                <div className="w-full max-h-[90vh] lg:max-w-[80vw] lg:min-h-[50vh] lg:max-h-[60vh] card card-side lg:gap-x-[2vw] p-2 bg-transparent flex flex-col lg:flex-row justify-center items-center">
+                    <figure className="w-[90vw] lg:w-[50vw] flex flex-col rounded-xl">
+                        <img src={state.thumbnail} alt="Course"/>
+                    </figure>
+                    <div className="card-body w-full lg:w-[50vw] relative pt-2">
+                        <h2 className="card-title text-2xl lg:text-4xl">{state.title}</h2>
                         <p className="overflow-hidden text-lg">{state.description}</p>
                         <p className="text-lg">Number of lectures : {state.numberOfLectures}</p>
-                        <p className="text-xl">₹500.00</p>
-                        <div className="card-actions justify-end">
-                        </div>
+                        <p className="text-xl text-blue-500">₹500.00</p>
                     </div>
                 </div>
+                <button className="btn btn-primary w-[60vw] lg:w-[36vw] h-[8vh] mt-2">Enroll Now</button>
             </main>
         </HomeLayout>
     )

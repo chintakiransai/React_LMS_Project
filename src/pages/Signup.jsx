@@ -64,7 +64,7 @@ function Signup() {
 
     return (
         <HomeLayout>
-            <div className='h-screen mt-16 w-full flex justify-center items-center'>
+            <div className='min-h-[90vh] mt-16 w-full flex justify-center items-center'>
                 <form onSubmit={formSubmit} noValidate className='w-80 flex flex-col space-y-1  shadow-[0_0_10px_black] px-10 py-6'>
                     <h1 className='text-2xl text-center font-bold'>Registration Page</h1>
                     <div>

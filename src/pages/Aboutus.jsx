@@ -10,9 +10,10 @@ function Aboutus() {
 
 return (
     <HomeLayout>
-        <div className="h-[90vh] flex mt-20 justify-center items-center px-2 sm:px-20  gap-8">
-            <section className="w-full sm:w-1/2 space-y-6">
-                <h1 className='text-5xl font-semibold text-blue-500 '>Affordable And Quality Education</h1>
+        <div className='h-fit w-full space-y-8 mt-20 mb-8 px-4 flex flex-col justify-center'>
+        <div className="w-full lg:ml-20 flex flex-row justify-center items-center">
+            <section className="w-full lg:w-1/2 space-y-6">
+                <h1 className='text-3xl lg:text-5xl font-semibold text-blue-500 '>Affordable And Quality Education</h1>
                 <p className='text-xl'>
                     Our goal is to provide the affordable and quality education to the world. 
                     We are providing the platform for the aspiring teachers and students to share
@@ -20,16 +21,16 @@ return (
                     in the growth and wellness of mankind.
                 </p>
             </section>
-            <section className="hidden sm:block w-1/2 ">
+            <section className="hidden lg:block w-1/2 ">
                 <img src={AboutImage} className='drop-shadow-2xl' alt="AboutImage" />
             </section>
         </div>
-        <div className='w-[40%] my-10 sm:mx-auto'>
-            <div className="carousel">
+        <div className='w-[90vw] lg:w-[40vw] mx-auto'>
+            <div className="carousel w-full">
                 <div id="slide1" className="carousel-item relative w-full">
                     <div className='flex flex-col justify-center items-center'>
                     <img src={apj} className="w-[30%] rounded-full border border-gray-500" />
-                    <q className='hidden sm:block w-[75%] text-xl text-gray-200 text-center'>Teaching is a very noble profession that shapes the character, caliber, and future of an individual.</q>
+                    <q className='w-[75%] text-xl text-gray-200 text-center'>Teaching is a very noble profession that shapes the character, caliber, and future of an individual.</q>
                     <h3 className='text-3xl font-semibold'>APJ Abdul Kalam</h3>
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-1 right-1 top-1/2">
                     <a href="#slide5" className="btn btn-circle">❮</a> 
@@ -82,6 +83,7 @@ return (
                     </div>
                 </div> 
             </div>
+        </div>
         </div>
     </HomeLayout>
 )

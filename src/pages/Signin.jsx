@@ -37,7 +37,7 @@ async function formSubmit(e)
 
     return (
         <HomeLayout>
-            <div className='h-screen mt-16 w-full flex justify-center items-center'>
+            <div className='min-h-[90vh] mt-16 w-full flex justify-center items-center'>
                 <form onSubmit={formSubmit} noValidate className='w-80 flex flex-col space-y-1 px-10 py-10 shadow-[0_0_10px_black]'>
                     <h1 className='text-4xl text-center font-semibold mb-4'>Login Page</h1>
                     <div className='flex flex-col gap-1'>
