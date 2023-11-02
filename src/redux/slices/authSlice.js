@@ -42,6 +42,23 @@ export const userlogin =createAsyncThunk("auth/login",async (data)=>
     }
 })
 
+export const changePassword =createAsyncThunk("auth/password",async (userPassword)=>
+{
+    try {
+    const response = axiosInstance.post('/user/changePassword',userPassword)
+    toast.promise(response,{
+        loading:"Please await User password is changing",
+        success: (data)=> {
+            return data?.data?.message
+        },
+        error:"Failed to change password"
+    })
+    return await response
+    } catch (error) {
+        toast.error(error?.response?.data?.message)
+    }
+})
+
 
 export const userlogout = createAsyncThunk("auth/userlogout", async () => {
     try {
@@ -62,10 +79,10 @@ const authSlice = createSlice({name:"auth",initialState,reducers:{},
                                 extraReducers: (builder) => {
                                     builder.addCase(userlogin.fulfilled,(state,action) => {
                                         state.isLoggedIn = true
-                                        state.role = action.payload.data.role
+                                        state.role = action.payload.data.user.role
                                         state.data = action.payload.data.user
                                         localStorage.setItem("isLoggedIn", true)
-                                        localStorage.setItem("role",action.payload.data.role)
+                                        localStorage.setItem("role",action.payload.data.user.role)
                                         localStorage.setItem("data",JSON.stringify(action.payload.data.user))                                        
                                     })
                                     .addCase(userlogout.fulfilled,(state) => {

@@ -48,7 +48,7 @@ function CreateCourse() {
     return (
         <HomeLayout>
             <main className="h-[90vh] flex justify-center items-center mt-24 mb-8">
-                <form onSubmit={submitHandler} className="gap-x-20 shadow-[0_0_10px_black] w-[620px] h-[480px]">
+                <form onSubmit={submitHandler} noValidate className="gap-x-20 shadow-[0_0_10px_black] w-[620px] h-[480px]">
                     <h1 className="text-center text-4xl font-semibold my-8">Create Course</h1>
                     <div className="flex justify-center gap-8 mx-4">
                         <section className="space-y-4 w-1/2">

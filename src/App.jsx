@@ -2,6 +2,7 @@ import './App.css'
 
 import {Route,Routes} from 'react-router-dom'
 
+import EditProfile from './components/Auth/EditProfile'
 import RequireAuth from './components/Auth/RequireAuth'
 import Aboutus from './pages/Aboutus'
 import Contact from './pages/Contact'
@@ -13,6 +14,7 @@ import Home from './pages/Home'
 import NotFound from './pages/NotFound'
 import Signin from './pages/signin'
 import Signup from './pages/Signup'
+import ChangePassword from './pages/User/ChangePassword'
 import UserProfile from './pages/User/UserProfile'
 
 function App() {
@@ -26,6 +28,8 @@ function App() {
       <Route path="/signin" element={<Signin/>}/>
       <Route path="/denied" element={<Denied/>}/>
       <Route path="/profile" element={<UserProfile/>}/>
+      <Route path="/editProfile" element={<EditProfile/>}/>
+      <Route path="/changePassword" element={<ChangePassword/>}/>
       <Route path="/courses" element={<CourseList/>}/>
       <Route path="/courses/description" element={<CourseDescription/>}/>
       <Route element={<RequireAuth allowedRoles={["ADMIN"]}/>} >

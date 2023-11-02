@@ -8,7 +8,7 @@ function UserProfile() {
     return (
         <HomeLayout>
             <main className='min-h-[90vh] flex justify-center items-center mt-16'>
-                <section className='w-[340px] flex flex-col items-center my-10 gap-4 px-4 py-6 shadow-[0_0_10px_black] rounded-lg'>
+                <section className='w-[340px] flex flex-col items-center my-10 gap-4 px-4 py-8 shadow-[0_0_10px_black] rounded-lg'>
                     <img className='w-36 h-36 rounded-full border border-black' 
                         src={userData.avatar} alt="" />
                     <h3 className='text-3xl capitalize'>{userData.name}</h3>
