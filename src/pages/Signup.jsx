@@ -20,7 +20,7 @@ function Signup() {
     {
         const uploadImage = (e.target.files[0])
         setSignupDetails({...signupDetails,avatar:uploadImage})
-        setPreviewImage(URL.createObjectURL(uploadImage))
+        setPreviewImage(window.URL.createObjectURL(uploadImage))
     }
 
     function userInputHandler(e) {

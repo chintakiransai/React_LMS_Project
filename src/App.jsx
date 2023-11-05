@@ -2,7 +2,6 @@ import './App.css'
 
 import {Route,Routes} from 'react-router-dom'
 
-import EditProfile from './components/Auth/EditProfile'
 import RequireAuth from './components/Auth/RequireAuth'
 import Aboutus from './pages/Aboutus'
 import Contact from './pages/Contact'
@@ -15,6 +14,7 @@ import NotFound from './pages/NotFound'
 import Signin from './pages/signin'
 import Signup from './pages/Signup'
 import ChangePassword from './pages/User/ChangePassword'
+import EditProfile from './pages/User/EditProfile'
 import UserProfile from './pages/User/UserProfile'
 
 function App() {

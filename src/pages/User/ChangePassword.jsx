@@ -1,7 +1,8 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
+import { AiOutlineArrowLeft } from "react-icons/ai";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import {Link, useNavigate } from "react-router-dom";
 
 import { isPassword } from "../../helpers/regexMatchers";
 import HomeLayout from "../../layouts/HomeLayout";
@@ -31,7 +32,8 @@ function ChangePassword() {
         }
         const response = await dispatch(changePassword(data))
         if(response?.payload?.data?.success) {
-            navigate(-1)
+            setData({oldPassword:"",newPassword:""})
+            navigate('/profile')
             console.log(response);
         }
     }
@@ -47,7 +49,7 @@ function ChangePassword() {
                                     <h3 >Enter Old Password</h3>
                                 </label>
                                 <input className=" bg-transparent border border-white"
-                                type="text"
+                                type="password"
                                 onChange={inputHandler} 
                                 name="oldPassword" 
                                 id="oldPassword" 
@@ -59,7 +61,7 @@ function ChangePassword() {
                                     <h3>Enter New Password</h3>
                                 </label>
                                 <input className=" bg-transparent border border-white"
-                                type="text"
+                                type="password"
                                 onChange={inputHandler} 
                                 name="newPassword" 
                                 id="newPassword"
@@ -67,6 +69,12 @@ function ChangePassword() {
                                 required 
                                 size='28'/>
                             </div>
+                            <Link to="/profile">
+                                <p className="link text-accent cursor-pointer flex items-center justify-center w-full gap-2">
+                                <AiOutlineArrowLeft /> Back to Profile
+                                </p>
+                            </Link>
+
                             <button className="block bg-blue-500 hover:bg-blue-600 text-white text-lg transition-all ease-in-out duration-300 py-1 px-16 rounded-sm ">Submit</button>
                 </form>
             </main>
