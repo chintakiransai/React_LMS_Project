@@ -11,10 +11,12 @@ import CreateCourse from './pages/Course/CreateCourse'
 import Denied from './pages/Denied'
 import Home from './pages/Home'
 import NotFound from './pages/NotFound'
-import Signin from './pages/signin'
+import Signin from './pages/Signin'
 import Signup from './pages/Signup'
 import ChangePassword from './pages/User/ChangePassword'
 import EditProfile from './pages/User/EditProfile'
+import ForgotPassword from './pages/User/Forgotpassword'
+import ResetPassword from './pages/User/ResetPassword'
 import UserProfile from './pages/User/UserProfile'
 
 function App() {
@@ -27,9 +29,13 @@ function App() {
       <Route path="/signup" element={<Signup/>}/>
       <Route path="/signin" element={<Signin/>}/>
       <Route path="/denied" element={<Denied/>}/>
-      <Route path="/profile" element={<UserProfile/>}/>
-      <Route path="/editProfile" element={<EditProfile/>}/>
+      <Route element={<RequireAuth allowedRoles={["ADMIN","USER"]}/>} >
+        <Route path="/profile" element={<UserProfile/>}/>
+        <Route path="/editProfile" element={<EditProfile/>}/>
+      </Route>
       <Route path="/changePassword" element={<ChangePassword/>}/>
+      <Route path="/forgotPassword" element={<ForgotPassword/>}/>
+      <Route path="/resetPassword/:resetToken" element={<ResetPassword/>}/>
       <Route path="/courses" element={<CourseList/>}/>
       <Route path="/courses/description" element={<CourseDescription/>}/>
       <Route element={<RequireAuth allowedRoles={["ADMIN"]}/>} >

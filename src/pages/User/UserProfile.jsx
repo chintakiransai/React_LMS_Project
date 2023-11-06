@@ -1,3 +1,4 @@
+import { BsPersonCircle } from 'react-icons/bs'
 import { useSelector} from 'react-redux'
 import { Link } from 'react-router-dom'
 
@@ -9,11 +10,11 @@ function UserProfile() {
         <HomeLayout>
             <main className='min-h-[90vh] flex justify-center items-center mt-16'>
                 <section className='w-[340px] flex flex-col items-center my-10 gap-4 px-4 py-8 shadow-[0_0_10px_black] rounded-lg'>
-                    <img className='w-36 h-36 rounded-full border border-black' 
-                        src={userData.avatar} alt="" />
+                    {userData.avatar ? (<img className='w-36 h-36 rounded-full border border-black' 
+                        src={userData.avatar} alt="Avatar"/>):(<BsPersonCircle className='w-24 h-24 rounded-full m-auto'/>)}
                     <h3 className='text-3xl capitalize'>{userData.name}</h3>
                     <div className='grid grid-cols-2 gap-2'>
-                        <p>Email:</p><p>{userData.email}</p>
+                        <p>Email:</p><p className='overflow-hidden hover:overflow-visible'>{userData.email}</p>
                         <p>Role:</p><p>{userData.role}</p>
                         <p>Subscription:</p><p>{userData.subscription=='active' ? 'Active' : 'Inactive'}</p>
                     </div>

@@ -59,6 +59,40 @@ export const changePassword =createAsyncThunk("auth/password",async (userPasswor
     }
 })
 
+export const forgotPassword =createAsyncThunk("auth/forgotPassword",async (email)=>
+{
+    try {
+    const response = axiosInstance.post('/user/reset',{email})
+    toast.promise(response,{
+        loading:"Please await sending email",
+        success: (data)=> {
+            return data?.data?.message
+        },
+        error:"Failed to sent email"
+    })
+    return await response
+    } catch (error) {
+        toast.error(error?.response?.data?.message)
+    }
+})
+
+export const resetPassword =createAsyncThunk("auth/forgotPassword",async (data)=>
+{
+    try {
+    const response = axiosInstance.post(`/user/reset/${data.resetToken}`,{password:data.password})
+    toast.promise(response,{
+        loading:"Please await reseting password",
+        success: (data)=> {
+            return data?.data?.message
+        },
+        error:"Failed to reset password"
+    })
+    return await response
+    } catch (error) {
+        toast.error(error?.response?.data?.message)
+    }
+})
+
 export const profileUpdate =createAsyncThunk("auth/editProfile",async (data)=>
 {
     try {

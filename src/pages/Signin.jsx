@@ -49,8 +49,8 @@ async function formSubmit(e)
                             value={signinDetails.email}  
                             placeholder='Enter Your Email' 
                             name="email" 
-                            id="email 
-                            required" />
+                            id="email" 
+                            required />
                     </div>
                     <div className='flex flex-col gap-1'>
                         <label htmlFor="password">Password</label>
@@ -61,13 +61,15 @@ async function formSubmit(e)
                             value={signinDetails.password}  
                             placeholder='Enter Your Password' 
                             name="password" 
-                            id="password 
-                            required" />
+                            id="password"
+                            required />
                     </div>
                     <button className='text-lg text-white font-semibold bg-blue-500 rounded-sm py-1 px-2 hover:bg-blue-600 transition-all ease-in-out duration-300 cursor-pointer'>Login</button>
                     <p className='text-center mt-2'>
-                        Donot have an Account?<Link to="/signup" className='text-blue-500 hover:text-blue-600'>Signup</Link>
+                        Donot have an Account? <Link to="/signup" className='text-blue-500 hover:text-blue-600'>Signup</Link>
                     </p>
+                        <Link to ="/forgotPassword" className="text-blue-500 hover:text-blue-600 text-center">Forgot account password</Link>
+                    
                 </form>
             </div>
         </HomeLayout>
