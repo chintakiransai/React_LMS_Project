@@ -7,7 +7,6 @@ import axiosInstance from "../../config/axiosInstance"
 const initialState = {
     key: "",
     subscription_id: "",
-    isPaymentVerified: false,
     allPayments: {},
     finalMonths: {},
     monthlySalesRecord: [],
@@ -95,9 +94,6 @@ const razorpaySlice = createSlice({name:"razorpay",
                                         })
                                         .addCase(createSubscription.fulfilled,(state,action)=> {
                                             state.subscription_id = action?.payload?.data?.subscription_id
-                                        })
-                                        .addCase(verifySubscription.fulfilled,(state,action)=> {
-                                            state.isPaymentVerified = action?.payload?.data?.success
                                         })
                                         .addCase(allPayments.fulfilled,(state,action)=> {
                                             state.allPayments = action?.payload?.data?.allPayments

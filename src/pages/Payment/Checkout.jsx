@@ -2,12 +2,14 @@ import { useEffect } from "react"
 import toast from "react-hot-toast"
 import { BiRupee } from "react-icons/bi"
 import { useDispatch, useSelector } from "react-redux"
+import { useNavigate } from "react-router-dom"
 
 import HomeLayout from "../../layouts/HomeLayout"
 import { createSubscription, razorpayKey, verifySubscription } from "../../redux/slices/razorpaySlice"
 
 function Checkout() {
     const dispatch =useDispatch()
+    const navigate = useNavigate() 
 
     const userData = useSelector((state)=>state?.auth?.data)
 
@@ -21,6 +23,11 @@ function Checkout() {
     }
     async function subscriptionHandler(e) {
         e.preventDefault()
+        if(userData.subscription.status ==='active')
+        {
+            toast.error('You are already subscribed')
+            return
+        }
         if(!razorpay_Key || !subscription_id ) {
             toast.error("razorpay key or subscription are not available")
             return
@@ -37,7 +44,8 @@ function Checkout() {
                 paymentDetails.razorpay_subscription_id=response.razorpay_subscription_id;
                 paymentDetails.razorpay_signature=response.razorpay_signature;
 
-                await dispatch(verifySubscription(paymentDetails))
+                const res = await dispatch(verifySubscription(paymentDetails))
+                res?.payload?.data?.success ? (navigate('/payment/checkoutSuccess')):(navigate('/payment/checkoutFailure'))
                 
             },
             prefill: {

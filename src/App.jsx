@@ -12,6 +12,8 @@ import Denied from './pages/Denied'
 import Home from './pages/Home'
 import NotFound from './pages/NotFound'
 import Checkout from './pages/Payment/Checkout'
+import CheckoutFailure from './pages/Payment/CheckoutFailure'
+import CheckoutSuccess from './pages/Payment/CheckoutSuccess'
 import Signin from './pages/Signin'
 import Signup from './pages/Signup'
 import ChangePassword from './pages/User/ChangePassword'
@@ -34,6 +36,8 @@ function App() {
         <Route path="/profile" element={<UserProfile/>}/>
         <Route path="/editProfile" element={<EditProfile/>}/>
         <Route path='/payment/checkout' element={<Checkout/>}/>
+        <Route path='/payment/checkoutSuccess' element={<CheckoutSuccess/>}/>
+        <Route path='/payment/checkoutFailure' element={<CheckoutFailure/>}/>
       </Route>
       <Route path="/changePassword" element={<ChangePassword/>}/>
       <Route path="/forgotPassword" element={<ForgotPassword/>}/>
