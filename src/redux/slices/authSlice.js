@@ -110,6 +110,21 @@ export const profileUpdate =createAsyncThunk("auth/editProfile",async (data)=>
     }
 })
 
+export const userDetails = createAsyncThunk("auth/userDetails", async () => {
+    try {
+    const response = axiosInstance.get('/user/userDetails')
+    toast.promise(response,{
+        loading:"Please getting user detailst",
+        success:(data)=> {
+            return data?.data?.message
+        }
+    })
+        return await response
+    } catch (error) {
+        toast.error(error?.response?.data?.message)
+    }
+})
+
 export const userlogout = createAsyncThunk("auth/userlogout", async () => {
     try {
     const response = axiosInstance.get('/user/userlogout')
@@ -142,6 +157,14 @@ const authSlice = createSlice({name:"auth",initialState,reducers:{},
                                         state.data = ""
                                     })
                                     .addCase(profileUpdate.fulfilled,(state,action)=> {
+                                        state.isLoggedIn = true
+                                        state.role = action?.payload?.data?.user?.role
+                                        state.data = action?.payload?.data?.user
+                                        localStorage.setItem("isLoggedIn", true)
+                                        localStorage.setItem("role",action.payload.data.user.role)
+                                        localStorage.setItem("data",JSON.stringify(action.payload.data.user))                                        
+                                    })
+                                    .addCase(userDetails.fulfilled,(state,action)=> {
                                         state.isLoggedIn = true
                                         state.role = action?.payload?.data?.user?.role
                                         state.data = action?.payload?.data?.user

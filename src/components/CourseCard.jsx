@@ -1,7 +1,6 @@
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-
 function CourseCard({courseList}) {
     const navigate =useNavigate()
     const { role, data } = useSelector((state)=>state.auth)
@@ -20,7 +19,7 @@ function CourseCard({courseList}) {
 
                         { role ==="ADMIN" || data?.subscription?.status ==="active" ? 
                         (<button className="w-1/2 h-[8vh] btn btn-secondary rounded-none rounded-br-xl" onClick={(e)=>{e.stopPropagation(); navigate('/')}}>Watch Now</button>):
-                        (<button className="w-1/2 h-[8vh] btn btn-secondary rounded-none rounded-br-xl">Enroll Now</button>)} 
+                        (<button className="w-1/2 h-[8vh] btn btn-secondary rounded-none rounded-br-xl" onClick={(e)=>{e.stopPropagation(); navigate('/payment/checkout')}}>Enroll Now</button>)} 
                         </div>
                 </div>
                 

@@ -1,4 +1,5 @@
 import { useLocation } from "react-router-dom";
+import { Link} from "react-router-dom";
 
 import HomeLayout from "../../layouts/HomeLayout";
 
@@ -19,7 +20,8 @@ function CourseDescription() {
                         <p className="text-xl text-blue-500">₹500.00</p>
                     </div>
                 </div>
-                <button className="btn btn-primary w-[60vw] lg:w-[36vw] h-[8vh] mt-2">Enroll Now</button>
+                
+                <Link to="/payment/checkout"><button className="btn btn-primary w-[60vw] lg:w-[36vw] h-[8vh] mt-2">Enroll Now</button></Link>
             </main>
         </HomeLayout>
     )

@@ -16,7 +16,7 @@ function UserProfile() {
                     <div className='grid grid-cols-2 gap-2'>
                         <p>Email:</p><p className='overflow-hidden hover:overflow-visible'>{userData.email}</p>
                         <p>Role:</p><p>{userData.role}</p>
-                        <p>Subscription:</p><p>{userData.subscription=='active' ? 'Active' : 'Inactive'}</p>
+                        <p>Subscription:</p><p>{userData?.subscription?.status==='active' ? 'Active' : 'Inactive'}</p>
                     </div>
                     <div className='w-full flex items-center justify-between gap-2'>
                         <Link to='/changePassword' className='w-1/2 text-white bg-blue-500 hover:bg-blue-600 transition-all ease-in-out duration-300 rounded-sm font-semibold p-2 cursor-pointer text-center'>
@@ -30,7 +30,7 @@ function UserProfile() {
                             </button>
                         </Link>
                     </div>
-                    {userData.subscription=='active'&&(
+                    {userData?.subscription?.status==='active'&&(
                             <button className='w-full text-white bg-red-500 hover:bg-red-600 transition-all ease-in-out duration-300 rounded-sm font-semibold p-2 cursor-pointer text-center'>
                                 Cancel Subscription
                             </button>

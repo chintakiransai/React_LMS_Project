@@ -11,6 +11,7 @@ import CreateCourse from './pages/Course/CreateCourse'
 import Denied from './pages/Denied'
 import Home from './pages/Home'
 import NotFound from './pages/NotFound'
+import Checkout from './pages/Payment/Checkout'
 import Signin from './pages/Signin'
 import Signup from './pages/Signup'
 import ChangePassword from './pages/User/ChangePassword'
@@ -32,6 +33,7 @@ function App() {
       <Route element={<RequireAuth allowedRoles={["ADMIN","USER"]}/>} >
         <Route path="/profile" element={<UserProfile/>}/>
         <Route path="/editProfile" element={<EditProfile/>}/>
+        <Route path='/payment/checkout' element={<Checkout/>}/>
       </Route>
       <Route path="/changePassword" element={<ChangePassword/>}/>
       <Route path="/forgotPassword" element={<ForgotPassword/>}/>
