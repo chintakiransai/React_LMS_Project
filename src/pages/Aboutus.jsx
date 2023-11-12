@@ -10,7 +10,7 @@ function Aboutus() {
 
 return (
     <HomeLayout>
-        <div className='h-fit w-full space-y-8 mt-20 mb-8 px-4 flex flex-col justify-center'>
+        <div className='w-full space-y-8 mt-20 mb-8 px-4 flex flex-col justify-center'>
         <div className="w-full lg:ml-20 flex flex-row justify-center items-center">
             <section className="w-full lg:w-1/2 space-y-6">
                 <h1 className='text-3xl lg:text-5xl font-semibold text-blue-500 '>Affordable And Quality Education</h1>

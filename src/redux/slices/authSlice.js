@@ -143,10 +143,10 @@ export const userlogout = createAsyncThunk("auth/userlogout", async () => {
 const authSlice = createSlice({name:"auth",initialState,reducers:{},
                                 extraReducers: (builder) => {
                                     builder.addCase(userlogin.fulfilled,(state,action) => {
-                                        state.isLoggedIn = true
+                                        state.isLoggedIn = action?.payload?.data?.success
                                         state.role = action?.payload?.data?.user?.role
                                         state.data = action?.payload?.data?.user
-                                        localStorage.setItem("isLoggedIn", true)
+                                        localStorage.setItem("isLoggedIn",  action.payload.data.success)
                                         localStorage.setItem("role",action.payload.data.user.role)
                                         localStorage.setItem("data",JSON.stringify(action.payload.data.user))                                        
                                     })
@@ -157,20 +157,20 @@ const authSlice = createSlice({name:"auth",initialState,reducers:{},
                                         state.data = ""
                                     })
                                     .addCase(profileUpdate.fulfilled,(state,action)=> {
-                                        state.isLoggedIn = true
+                                        state.isLoggedIn = action?.payload?.data?.success
                                         state.role = action?.payload?.data?.user?.role
                                         state.data = action?.payload?.data?.user
-                                        localStorage.setItem("isLoggedIn", true)
+                                        localStorage.setItem("isLoggedIn",  action.payload.data.success)
                                         localStorage.setItem("role",action.payload.data.user.role)
-                                        localStorage.setItem("data",JSON.stringify(action.payload.data.user))                                        
+                                        localStorage.setItem("data",JSON.stringify(action.payload.data.user))                                       
                                     })
                                     .addCase(userDetails.fulfilled,(state,action)=> {
-                                        state.isLoggedIn = true
+                                        state.isLoggedIn = action?.payload?.data?.success
                                         state.role = action?.payload?.data?.user?.role
                                         state.data = action?.payload?.data?.user
-                                        localStorage.setItem("isLoggedIn", true)
+                                        localStorage.setItem("isLoggedIn",  action.payload.data.success)
                                         localStorage.setItem("role",action.payload.data.user.role)
-                                        localStorage.setItem("data",JSON.stringify(action.payload.data.user))                                        
+                                        localStorage.setItem("data",JSON.stringify(action.payload.data.user))                                       
                                     })
                                 }
                             })
