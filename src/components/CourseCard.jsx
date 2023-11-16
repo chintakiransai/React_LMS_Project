@@ -18,7 +18,7 @@ function CourseCard({courseList}) {
                         <button className="w-1/2 h-[8vh] btn btn-primary rounded-none rounded-bl-xl">Explore</button>
 
                         { role ==="ADMIN" || data?.subscription?.status ==="active" ? 
-                        (<button className="w-1/2 h-[8vh] btn btn-secondary rounded-none rounded-br-xl" onClick={(e)=>{e.stopPropagation(); navigate('/')}}>Watch Now</button>):
+                        (<button className="w-1/2 h-[8vh] btn btn-secondary rounded-none rounded-br-xl" onClick={(e)=>{e.stopPropagation(); navigate('/dashboard/dispalyLectures',{state:{...courseList}})}}>Watch Now</button>):
                         (<button className="w-1/2 h-[8vh] btn btn-secondary rounded-none rounded-br-xl" onClick={(e)=>{e.stopPropagation(); navigate('/payment/checkout')}}>Enroll Now</button>)} 
                         </div>
                 </div>

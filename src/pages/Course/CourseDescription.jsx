@@ -23,7 +23,7 @@ function CourseDescription() {
                     </div>
                 </div>
                 { role ==="ADMIN" || data?.subscription?.status ==="active" ? 
-                        (<button className="btn btn-primary w-[60vw] lg:w-[36vw] h-[8vh] mt-2" onClick={()=>{ navigate('/')}}>Watch Now</button>):
+                        (<button className="btn btn-primary w-[60vw] lg:w-[36vw] h-[8vh] mt-2" onClick={()=>{ navigate('/dashboard/dispalyLectures',{state:{...state}})}}>Watch Now</button>):
                         (<button className="btn btn-primary w-[60vw] lg:w-[36vw] h-[8vh] mt-2" onClick={()=>{ navigate('/payment/checkout')}}>Enroll Now</button>)} 
             </main>
         </HomeLayout>

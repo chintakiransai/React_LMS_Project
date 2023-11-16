@@ -8,6 +8,7 @@ import Contact from './pages/Contact'
 import CourseDescription from './pages/Course/CourseDescription'
 import CourseList from './pages/Course/CourseList'
 import CreateCourse from './pages/Course/CreateCourse'
+import DisplayLectures from './pages/Dashboard/DisplayLectures'
 import Denied from './pages/Denied'
 import Home from './pages/Home'
 import NotFound from './pages/NotFound'
@@ -38,6 +39,7 @@ function App() {
         <Route path='/payment/checkout' element={<Checkout/>}/>
         <Route path='/payment/checkoutSuccess' element={<CheckoutSuccess/>}/>
         <Route path='/payment/checkoutFailure' element={<CheckoutFailure/>}/>
+        <Route path='/dashboard/dispalyLectures' element={<DisplayLectures/>}/>
       </Route>
       <Route path="/changePassword" element={<ChangePassword/>}/>
       <Route path="/forgotPassword" element={<ForgotPassword/>}/>
