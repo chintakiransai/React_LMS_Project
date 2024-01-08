@@ -73,11 +73,11 @@ function EditProfile() {
                         <div className="space-y-4 flex flex-col justify-center">
                             <div className="space-y-2">
                             <label htmlFor="name" className="text-lg font-semibold">Enter your Name</label>
-                            <input className=" bg-transparent border border-white"
+                            <input className=" bg-transparent border border-white flex justify-center"
                              type="text" 
                              name="name" 
                              id="name" 
-                             size='28'
+                             size='26'
                              onChange={inputHandler}
                              value={userData.name}
                              required/>

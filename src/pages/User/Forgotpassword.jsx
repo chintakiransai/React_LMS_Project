@@ -44,7 +44,7 @@ function ForgotPassword() {
                     onChange={(e)=>setEmail(e.target.value)}
                     value = {email}
                     placeholder=" Enter your Email"
-                    size="30"
+                    size="28"
                     required />
                     <Link to="/Signin">
                             <p className="link text-accent cursor-pointer flex items-center justify-center w-full gap-2">

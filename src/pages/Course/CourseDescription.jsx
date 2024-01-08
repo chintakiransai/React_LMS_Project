@@ -17,7 +17,7 @@ function CourseDescription() {
                     </figure>
                     <div className="card-body w-full lg:w-[50vw] relative pt-2">
                         <h2 className="card-title text-2xl lg:text-4xl">{state.title}</h2>
-                        <p className="overflow-hidden text-lg">{state.description}</p>
+                        <p className="overflow-hidden text-xl">{state.description}</p>
                         <p className="text-lg">Number of lectures : {state.numberOfLectures}</p>
                         <p className="text-xl text-blue-500">₹500.00</p>
                     </div>

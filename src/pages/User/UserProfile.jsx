@@ -29,7 +29,7 @@ function UserProfile() {
                         src={userData.avatar} alt="Avatar"/>):(<BsPersonCircle className='w-24 h-24 rounded-full m-auto'/>)}
                     <h3 className='text-3xl capitalize'>{userData.name}</h3>
                     <div className='grid grid-cols-2 gap-2'>
-                        <p>Email:</p><p className='overflow-hidden hover:overflow-visible'>{userData.email}</p>
+                        <p>Email:</p><p className='overflow-hidden hover:overflow-visible truncate'>{userData.email}</p>
                         <p>Role:</p><p>{userData.role}</p>
                         <p>Subscription:</p><p>{userData?.subscription?.status==='active' ? 'active' : 'Inactive'}</p>
                     </div>

@@ -28,7 +28,7 @@ export const createAccount = createAsyncThunk('auth/signup',async (data)=> {
 export const userlogin =createAsyncThunk("auth/login",async (data)=>
 {
     try {
-    const response = axiosInstance.post('/user/userlogin',data)
+    const response = axiosInstance.post('user/userlogin',data)
     toast.promise(response,{
         loading:"Please await User account is Authenicating!",
         success: (data)=> {
@@ -45,7 +45,7 @@ export const userlogin =createAsyncThunk("auth/login",async (data)=>
 export const changePassword =createAsyncThunk("auth/password",async (userPassword)=>
 {
     try {
-    const response = axiosInstance.post('/user/changePassword',userPassword)
+    const response = axiosInstance.post('user/changePassword',userPassword)
     toast.promise(response,{
         loading:"Please await User password is changing",
         success: (data)=> {
@@ -79,7 +79,7 @@ export const forgotPassword =createAsyncThunk("auth/forgotPassword",async (email
 export const resetPassword =createAsyncThunk("auth/forgotPassword",async (data)=>
 {
     try {
-    const response = axiosInstance.post(`/user/reset/${data.resetToken}`,{password:data.password})
+    const response = axiosInstance.post(`user/reset/${data.resetToken}`,{password:data.password})
     toast.promise(response,{
         loading:"Please await reseting password",
         success: (data)=> {
@@ -96,7 +96,7 @@ export const resetPassword =createAsyncThunk("auth/forgotPassword",async (data)=
 export const profileUpdate =createAsyncThunk("auth/editProfile",async (data)=>
 {
     try {
-    const response = axiosInstance.put('/user/updateProfile',data)
+    const response = axiosInstance.put('user/updateProfile',data)
     toast.promise(response,{
         loading:"Please await User profile is updating!",
         success: (data)=> {
@@ -112,7 +112,7 @@ export const profileUpdate =createAsyncThunk("auth/editProfile",async (data)=>
 
 export const userDetails = createAsyncThunk("auth/userDetails", async () => {
     try {
-    const response = axiosInstance.get('/user/userDetails')
+    const response = axiosInstance.get('user/userDetails')
     toast.promise(response,{
         loading:"Please getting user detailst",
         success:(data)=> {
@@ -127,7 +127,7 @@ export const userDetails = createAsyncThunk("auth/userDetails", async () => {
 
 export const userlogout = createAsyncThunk("auth/userlogout", async () => {
     try {
-    const response = axiosInstance.get('/user/userlogout')
+    const response = axiosInstance.get('user/userlogout')
     toast.promise(response,{
         loading:"Please await User is logout",
         success:(data)=> {
