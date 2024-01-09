@@ -30,7 +30,7 @@ function CreateCourse() {
             return
         }
 
-        const form =new FormData()
+        const form = new FormData()
         form.append("title",inputText.title)
         form.append("description",inputText.description)
         form.append("category",inputText.category)

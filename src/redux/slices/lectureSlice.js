@@ -7,9 +7,14 @@ const initialState = {
     Lectures:[]
 }
 
-export const createLecture = createAsyncThunk('/lecture/createLecture', async (data)=> {
+export const createLecture = createAsyncThunk('/lecture/createLecture', async (inputUser)=> {
     try {
-        const response = axiosInstance.post(`/course/${data.courseId}`,data.formData)
+        const data = new FormData()
+        data.append("title",inputUser.title)
+        data.append("description",inputUser.description)
+        data.append("lecture",inputUser.lecture)
+        const response = axiosInstance.post(`/course/${inputUser.id}`,data)
+        console.log(response);
         toast.promise(response,{
             loading:"please wait Creating lecture",
             success:(data)=> {

@@ -54,10 +54,10 @@ useEffect(()=> {
                             </div>
                             <div className="my-6 px-2 mb-4 md:mb-24">
                                 <p className="text-4xl">
-                                    Title: {courseDetails.title}
+                                    Title: {courseDetails?.title}
                                 </p>
                                 <p className="text-2xl my-2">
-                                    Description: {courseDetails.description}
+                                    Description: {courseDetails?.description}
                                 </p>
                             </div>
                     </section>
@@ -65,7 +65,8 @@ useEffect(()=> {
                                 <h1 className="text-white font-semibold text-2xl inline">
                                     Lectures List
                                 </h1>
-                                {(role=="ADMIN")&&(<button className="bg-blue-500 text-white py-2 px-2 rounded-sm absolute right-2  hover:bg-blue-600 transition-all ease-in-out">
+                                {(role=="ADMIN")&&(<button className="bg-blue-500 text-white py-2 px-2 rounded-sm absolute right-2  hover:bg-blue-600 transition-all ease-in-out"
+                                    onClick={()=>{navigate('/dashboard/addLectures',{state:{...courseDetails}})}}>
                                     Add new lecture
                                 </button>)}
                         </div>
