@@ -67,15 +67,15 @@ export const cancelSubscription = createAsyncThunk('razorpay/cancelSubcription',
     }
 })
 
-export const allPayments = createAsyncThunk('razorpay/allPayments',async ()=> {
+export const getallPayments = createAsyncThunk('razorpay/allPayments',async ()=> {
     try {
-        const response = axiosInstance.get('/payment/payments?count=100')
+        const response = axiosInstance.get('/payment/payments?count=10')
         toast.promise(response,{
-            loading:"Please wait unsubscribing",
+            loading:"Getting the payment records",
             success: (data)=> {
                 return data?.data?.message
             },
-            error:"Failed to unsubscribed"
+            error:"Failed to get payment records"
         })
         return await response
     } catch (error) {
@@ -95,7 +95,7 @@ const razorpaySlice = createSlice({name:"razorpay",
                                         .addCase(createSubscription.fulfilled,(state,action)=> {
                                             state.subscription_id = action?.payload?.data?.subscription_id
                                         })
-                                        .addCase(allPayments.fulfilled,(state,action)=> {
+                                        .addCase(getallPayments.fulfilled,(state,action)=> {
                                             state.allPayments = action?.payload?.data?.allPayments
                                             state.monthlySalesRecord = action?.payload?.data?.monthlySalesRecord
                                             state.finalMonths = action?.payload?.data?.finalMonths

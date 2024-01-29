@@ -3,14 +3,12 @@ import toast from "react-hot-toast"
 
 import axiosInstance from "../../config/axiosInstance"
 
-
-
 const initialState = {
     allUsersCount: 0,
     subscribedCount: 0
 }
 
-export const getStat = createAsyncThunk('/stat/get', async ()=> {
+export const getStats = createAsyncThunk('/stats/get', async ()=> {
         try {
             const response = axiosInstance.get('contact/user/stats')
             toast.promise(response,{
@@ -32,7 +30,7 @@ const statSlice = createSlice({
                     initialState,
                     reducers:{},
                     extraReducers:(builder) => {
-                            builder.addCase(getStat.fulfilled,(state,action)=>{
+                            builder.addCase(getStats.fulfilled,(state,action)=>{
                                 state.allUsersCount = action?.payload?.data?.allUsersCount
                                 state.subscribedCount = action?.payload?.data?.subscribedCount
                             })

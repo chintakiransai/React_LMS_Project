@@ -36,7 +36,6 @@ function Contact() {
                 error : "Failed to submit the form"
             })
            const responseData = await response
-           console.log(responseData);
             if(responseData?.data)
             {
                 setContactInput({name:'',email:'',message:''})

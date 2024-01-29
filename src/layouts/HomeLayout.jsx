@@ -39,7 +39,7 @@ function HomeLayout({children}) {
                     <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
                         <li className='absolute top-5 right-4 w-fit z-50 text-white'><button onClick={hideDrawer}><AiFillCloseCircle size={20} /></button></li>
                         <li className={currentRoute === '/' ? 'bg-blue-500 text-white rounded-lg text-lg' : 'text-lg'}><Link to="/">Home</Link></li>
-                        {isLoggedIn && role == 'ADMIN' && ( <li className={currentRoute === '/admin/dasboard' ? 'bg-blue-500 text-white rounded-lg text-lg' : 'text-lg'}><Link to="/admin/dasboard">Admin Dasboard</Link></li>)}
+                        {isLoggedIn && role == 'ADMIN' && ( <li className={currentRoute === '/dashboard/adminDasboard' ? 'bg-blue-500 text-white rounded-lg text-lg' : 'text-lg'}><Link to="/dashboard/adminDasboard">Admin Dasboard</Link></li>)}
                         {isLoggedIn && role == 'ADMIN' && ( <li className={currentRoute === '/courses/create' ? 'bg-blue-500 text-white rounded-lg text-lg' : 'text-lg'}><Link to="/courses/create">Course Create</Link></li>)}
                         <li className={currentRoute === '/courses' ? 'bg-blue-500 text-white rounded-lg text-lg' : 'text-lg'}><Link to="/courses">All Courses</Link></li>
                         <li className={currentRoute === '/contact' ? 'bg-blue-500 text-white rounded-lg text-lg' : 'text-lg'}><Link to="/contact">Contact Us</Link></li>

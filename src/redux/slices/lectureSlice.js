@@ -14,7 +14,6 @@ export const createLecture = createAsyncThunk('/lecture/createLecture', async (i
         data.append("description",inputUser.description)
         data.append("lecture",inputUser.lecture)
         const response = axiosInstance.post(`/course/${inputUser.id}`,data)
-        console.log(response);
         toast.promise(response,{
             loading:"please wait Creating lecture",
             success:(data)=> {

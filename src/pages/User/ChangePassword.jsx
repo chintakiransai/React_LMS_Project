@@ -34,7 +34,6 @@ function ChangePassword() {
         if(response?.payload?.data?.success) {
             setData({oldPassword:"",newPassword:""})
             navigate('/profile')
-            console.log(response);
         }
     }
 
